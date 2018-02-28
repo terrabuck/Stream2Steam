@@ -21,8 +21,8 @@ getCatalog()
 	console.log('Received initial list of games POGGERS');
 })
 .then(() => getAppid(streamer))
-.then(gameId => {
-  console.log(gameId)
+.then(result => {
+  console.log(`Current game: ${result.game}. Check it out on steam: https://store.steampowered.com/app/${result.gameId}`)
 });
 
 
@@ -37,16 +37,15 @@ setInterval(() => {
 
 
 // Get game of a twitch channel
-twitchGame(streamer)
-    .then(game => console.log('Received information from the stream'))
-    .catch(err => console.log('Something went wrong'));
-
+// twitchGame(streamer)
+//     .then(game => console.log('Received information from the stream'))
+//     .catch(err => console.log('Something went wrong'));
 
 
 // Get steam app ID for the streamer's game
-getAppid(streamer)
-    .then(result => console.log(`Current game: ${result.game}. Check it out on steam: https://store.steampowered.com/app/${result.gameId}`)
-    .catch(err => console.log('Something is scuffed FeelsBadMan')));
+// getAppid(streamer)
+//     .then(result => console.log(`Current game: ${result.game}. Check it out on steam: https://store.steampowered.com/app/${result.gameId}`)
+//     .catch(err => console.log('Something is scuffed FeelsBadMan')));
 
 
     
